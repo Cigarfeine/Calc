@@ -118,6 +118,22 @@ button:hover {
   }
 }
 
+.copyright-mark {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  text-align: center;
+  color: #bdbdbd;
+  font-size: 1.05em;
+  font-family: 'Fira Mono', 'Consolas', 'Menlo', monospace;
+  letter-spacing: 0.04em;
+  background: transparent;
+  padding: 10px 0 8px 0;
+  z-index: 100;
+  user-select: none;
+}
+
 
 
 
