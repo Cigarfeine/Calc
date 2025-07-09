@@ -17,6 +17,7 @@
         <input type="text" id="secondNumber" class="display" placeholder="Second number">
         <button onclick="calculate()">Calculate</button>
         <div id="result" class="display" style="background:transparent; color:#34db3f;"></div>
+        <img id="result-img" class="result-img" src="https://www.meme-arsenal.com/memes/8b955bf4c55ba0ae6f324087fd02777b.jpg" alt="Result" style="display:none;" />
         <div class="loading-spinner"></div>
         <canvas class="slow-image" width="320" height="180"></canvas>
     </div>
@@ -25,10 +26,13 @@
         var firstNumber = document.getElementById("firstNumber").value;
         var secondNumber = document.getElementById("secondNumber").value;
         var resultDiv = document.getElementById("result");
+        var resultImg = document.getElementById("result-img");
         var spinner = document.querySelector('.loading-spinner');
         var slowImage = document.querySelector('.slow-image');
         resultDiv.textContent = '';
         resultDiv.style.color = '#34db3f';
+        resultImg.style.display = 'none';
+        resultImg.classList.remove('show');
         slowImage.style.display = 'none';
         spinner.style.display = 'inline-block';
         var num1 = parseFloat(firstNumber);
@@ -38,16 +42,23 @@
                 spinner.style.display = 'none';
                 resultDiv.style.color = 'red';
                 resultDiv.textContent = 'Please enter valid numbers!';
+                resultImg.style.display = 'none';
+                resultImg.classList.remove('show');
             }, 700);
             return;
         }
         setTimeout(function() {
             spinner.style.display = 'none';
-            resultDiv.textContent = (num1 + num2).toString();
+            resultDiv.textContent = '';
+            resultImg.style.display = 'block';
+            // Trigger reflow for animation
+            void resultImg.offsetWidth;
+            resultImg.classList.add('show');
         }, 900);
     }
     </script>
 </body>
 </html>
+
 
 
