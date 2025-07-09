@@ -1,11 +1,14 @@
+
 body {
   background: linear-gradient(135deg, #1e1e2f, #3a3a5a);
-  height: 100vh;
+  min-height: 100vh;
+  min-width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
+  box-sizing: border-box;
 }
 
 .calculator {
@@ -15,6 +18,15 @@ body {
   backdrop-filter: blur(10px);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100vw;
+  max-width: 400px;
+  min-width: 260px;
+  aspect-ratio: 9/16;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  box-sizing: border-box;
 }
 
 .display {
@@ -27,6 +39,33 @@ body {
   margin-bottom: 15px;
   border-radius: 10px;
   text-align: right;
+  box-sizing: border-box;
+}
+@media (max-width: 600px) {
+  .calculator {
+    max-width: 98vw;
+    min-width: 0;
+    padding: 10px;
+    border-radius: 10px;
+    aspect-ratio: unset;
+  }
+  .display {
+    font-size: 1.2em;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  button {
+    padding: 12px;
+    font-size: 1em;
+  }
+  .buttons {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+  }
+  .slow-image {
+    max-width: 100%;
+    height: auto !important;
+  }
 }
 
 .buttons {
@@ -56,3 +95,5 @@ button:active {
   transform: scale(0.95);
   background: rgba(255, 255, 255, 0.4);
 }
+
+
