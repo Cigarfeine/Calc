@@ -33,10 +33,10 @@ JavaScript
 (No frameworks. Pure chaos.)
 
 📁 Project Structure
-Calc/
-├── index.html
-├── style.css
-└── script.js
+    Calc/
+    index.html
+    style.css
+    script.js
 
 📦 Installation
 
