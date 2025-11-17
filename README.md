@@ -33,6 +33,7 @@ JavaScript
 (No frameworks. Pure chaos.)
 
 📁 Project Structure
+
     Calc/
     index.html
     style.css
